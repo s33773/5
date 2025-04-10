@@ -46,14 +46,15 @@ public class Klient {
         return true;
     }
 
-    public String wyswietlRezerwacje() {
+    public void wyswietlRezerwacje() {
         for (Wydarzenie wydarzenie : listaRezerwacji) {
             System.out.println(wydarzenie);
         }
-        return "";
     }
     public void anulujRezerwacje(Wydarzenie wydarzenie) {
         listaRezerwacji.remove(wydarzenie);
     }
-}
+
+    }
+
 

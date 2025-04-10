@@ -80,7 +80,6 @@ public class Wydarzenie {
             return false;
         }
         dostepneMiejsca--;
-        System.out.println("Zarezerwowano miejsce");
         return true;
     }
 }
