@@ -24,6 +24,25 @@ public class Wydarzenie {
         this.cena = cena;
     }
 
+    @Override
+    public String toString() {
+        return "Wydarzenie{" +
+                "nazwa='" + nazwa + '\'' +
+                ", data='" + data + '\'' +
+                ", miejsce='" + miejsce + '\'' +
+                ", maxLiczbaMiejsc=" + maxLiczbaMiejsc +
+                ", dostepneMiejsca=" + dostepneMiejsca +
+                ", cena=" + cena +
+                '}';
+    }
+    public void zarezerwujMiejsce() {
+        if (dostepneMiejsca <= 0) {
+            System.out.println("Brak dostępnyc miejsc");
+        }
+        dostepneMiejsca--;
+    }
+
+
     public String getNazwa() {
         return nazwa;
     }
@@ -70,16 +89,5 @@ public class Wydarzenie {
 
     public void setCena(double cena) {
         this.cena = cena;
-    }
-    public String toString() {
-        return this.nazwa+ " "+this.data+" "+this.miejsce;
-    }
-    public boolean zarezerwujMiejsce(){
-        if(dostepneMiejsca<=0){
-            System.out.println("Brak dostępnyc miejsc");
-            return false;
-        }
-        dostepneMiejsca--;
-        return true;
     }
 }

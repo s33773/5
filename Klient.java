@@ -6,15 +6,27 @@ public class Klient {
     private String email;
     private ArrayList<Wydarzenie> listaRezerwacji = new ArrayList<>();
 
-    public Klient(String imie, String email, String nazwisko) {
+    public Klient(String imie, String nazwisko) {
         this.imie = imie;
-        this.email = email;
         this.nazwisko = nazwisko;
     }
 
-    public Klient(String nazwisko, String imie) {
-        this.nazwisko = nazwisko;
+    public Klient(String imie, String nazwisko, String email) {
         this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.email = email;
+    }
+    public boolean dodajRezerwacje(Wydarzenie wydarzenie) {
+        listaRezerwacji.add(wydarzenie);
+        return true;
+    }
+    public void wyswietlRezerwacje() {
+        for(Wydarzenie wydarzenie:listaRezerwacji){
+            System.out.println(wydarzenie.toString());
+        }
+    }
+    public void anulujRezerwacje(Wydarzenie wydarzenie) {
+        listaRezerwacji.remove(wydarzenie);
     }
 
     public String getImie() {
@@ -40,21 +52,4 @@ public class Klient {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public boolean dodajRezerwacje(Wydarzenie wydarzenie) {
-        listaRezerwacji.add(wydarzenie);
-        return true;
-    }
-
-    public void wyswietlRezerwacje() {
-        for (Wydarzenie wydarzenie : listaRezerwacji) {
-            System.out.println(wydarzenie);
-        }
-    }
-    public void anulujRezerwacje(Wydarzenie wydarzenie) {
-        listaRezerwacji.remove(wydarzenie);
-    }
-
-    }
-
-
+}
